@@ -55,7 +55,7 @@ typesense:
   persistence:
     tsdata:
       # Enabling typesense persistence is recommended to avoid slow reindexing
-      enabled: false
+      enabled: true
       accessMode: ReadWriteOnce
       size: 1Gi
       storageClass: local-path
@@ -111,7 +111,7 @@ web:
     pullPolicy: IfNotPresent
   persistence:
     library:
-      enabled: false
+      enabled: true
 
 proxy:
   enabled: true
@@ -121,7 +121,7 @@ proxy:
 
   persistence:
     library:
-      enabled: false
+      enabled: true
 
   ingress:
     main:
