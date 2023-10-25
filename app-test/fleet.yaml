@@ -1,14 +1,14 @@
 defaultNamespace: app-test-ns
 helm:
-  repo: https://kubernetes-charts.alfresco.com/stable
-  version: "7.0.0-M.2"
-  chart: alfresco-content-services
+  repo: https://git.rancher.io/charts
+  version: "103.0.0+up45.31.1"
+  chart: rancher-monitoring
   releaseName: app-test-hr
 targetCustomizations:
   - name: mandronic-test-dwnstr-rke2
     helm:
-      repo: https://kubernetes-charts.alfresco.com/stable
-      version: "7.0.0-M.2"
+      repo:	https://git.rancher.io/charts
+      version: "103.0.0+up45.31.1"
       valuesFiles:
         - values.yaml
     clusterSelector:
