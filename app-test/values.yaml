@@ -3,14 +3,14 @@ controllers:
     containers:
       main:
         image:
-          repository: docker.io/nginx
+          repository: registry.hub.docker.com/library/nginx
           tag: 1.17.4
 
   second:
     containers:
       main:
         image:
-          repository: docker.io/nginx
+          repository: registry.hub.docker.com/library/nginx
           tag: 1.24.0
 
 service:
@@ -26,9 +26,3 @@ service:
         port: 9000
         targetPort: 80
 
-ingress:
-  main:
-   enabled: false
-  second:
-    controller: second
-    enabled: false
