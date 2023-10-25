@@ -111,7 +111,7 @@ web:
     pullPolicy: IfNotPresent
   persistence:
     library:
-      enabled: true
+      enabled: false
 
 proxy:
   enabled: true
