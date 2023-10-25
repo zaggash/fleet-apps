@@ -4,6 +4,8 @@ helm:
   version: "2.0.3"
   chart: app-template
   releaseName: app-test-hr
+  skipSchemaValidation: true
+
 targetCustomizations:
   - name: mandronic-test-dwnstr-rke2
     helm:
