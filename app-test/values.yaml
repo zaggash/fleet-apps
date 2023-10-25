@@ -1,16 +1,16 @@
 controllers:
   main:
     containers:
-      default:
+      main:
         image:
-          repository: nginx
+          repository: docker.io/nginx
           tag: 1.17.4
 
   second:
     containers:
-      default:
+      main:
         image:
-          repository: nginx
+          repository: docker.io/nginx
           tag: 1.24.0
 
 service:
@@ -20,6 +20,7 @@ service:
         port: 8000
         targetPort: 80
   second:
+    controller: second
     ports:
       http:
         port: 9000
@@ -29,4 +30,5 @@ ingress:
   main:
    enabled: false
   second:
+    controller: second
     enabled: false
