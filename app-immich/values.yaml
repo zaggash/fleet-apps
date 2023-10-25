@@ -27,12 +27,12 @@ immich:
     library:
       # Automatically creating the library volume is not supported by this chart
       # You have to specify an existing PVC to use
-      existingClaim:
+      existingClaim: immich-pvc
 
 # Dependencies
 
 postgresql:
-  enabled: false
+  enabled: true
   global:
     postgresql:
       auth:
@@ -41,13 +41,13 @@ postgresql:
         password: immich
 
 redis:
-  enabled: false
+  enabled: true
   architecture: standalone
   auth:
     enabled: false
 
 typesense:
-  enabled: false
+  enabled: true
   env:
     TYPESENSE_DATA_DIR: /tsdata
     TYPESENSE_API_KEY: typesense
@@ -57,7 +57,7 @@ typesense:
       enabled: false
       accessMode: ReadWriteOnce
       size: 1Gi
-      # storageClass: storage-class
+      storageClass: local-path
   image:
     repository: docker.io/typesense/typesense
     tag: 0.24.0
@@ -82,7 +82,7 @@ microservices:
       # Optional: Set this to pvc to avoid downloading the geodata every start.
       type: emptyDir
       accessMode: ReadWriteMany
-      # storageClass: your-class
+      storageClass: local-path
   image:
     repository: ghcr.io/immich-app/immich-server
     pullPolicy: IfNotPresent
@@ -101,7 +101,7 @@ machine-learning:
       # Optional: Set this to pvc to avoid downloading the ML models every start.
       type: emptyDir
       accessMode: ReadWriteMany
-      # storageClass: your-class
+      storageClass: local-path
 
 web:
   enabled: true
@@ -124,12 +124,12 @@ proxy:
 
   ingress:
     main:
-      enabled: false
+      enabled: true
       annotations:
         # proxy-body-size is set to 0 to remove the body limit on file uploads
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
       hosts:
-        - host: immich.local
+        - host: localhost
           paths:
             - path: "/"
       tls: []
