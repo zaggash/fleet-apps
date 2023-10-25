@@ -1,0 +1,16 @@
+defaultNamespace: app-test-ns
+helm:
+  repo: https://kubernetes-charts.alfresco.com/stable
+  version: "7.0.0-M.2"
+  chart: alfresco-content-services
+  releaseName: app-test-hr
+targetCustomizations:
+  - name: mandronic-test-dwnstr-rke2
+    helm:
+      repo: https://kubernetes-charts.alfresco.com/stable
+      version: "7.0.0-M.2"
+      valuesFiles:
+        - values.yaml
+    clusterSelector:
+      matchLabels:
+        management.cattle.io/cluster-display-name: mandronic-test-dwnstr-rke2
