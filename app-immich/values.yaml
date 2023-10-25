@@ -36,6 +36,7 @@ postgresql:
   global:
     postgresql:
       auth:
+        postgresPassword: nfBj6yVR66
         username: immich
         database: immich
         password: immich
