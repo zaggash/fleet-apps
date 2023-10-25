@@ -1,14 +1,14 @@
 defaultNamespace: app-test-ns
 helm:
-  repo: https://git.rancher.io/charts
-  version: "103.0.0+up45.31.1"
-  chart: rancher-monitoring
+  repo: https://bjw-s.github.io/helm-charts
+  version: "2.0.3"
+  chart: app-template
   releaseName: app-test-hr
 targetCustomizations:
   - name: mandronic-test-dwnstr-rke2
     helm:
-      repo:	https://git.rancher.io/charts
-      version: "103.0.0+up45.31.1"
+      repo:	https://bjw-s.github.io/helm-charts
+      version: "2.0.3"
       valuesFiles:
         - values.yaml
     clusterSelector:
