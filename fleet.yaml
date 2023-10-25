@@ -1,0 +1,3 @@
+defaultNamespace: immich-ns
+helm:
+  releaseName: immich-hr
