@@ -121,7 +121,7 @@ proxy:
 
   persistence:
     library:
-      enabled: true
+      enabled: false
 
   ingress:
     main:
