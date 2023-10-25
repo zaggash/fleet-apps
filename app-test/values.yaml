@@ -3,16 +3,29 @@ controllers:
     containers:
       main:
         image:
-          repository: "registry.hub.docker.com/library/nginx"
-          tag: "1.17.4"
-      second:
+          repository: ghcr.io/mendhak/http-https-echo
+          tag: 30
+          pullPolicy: IfNotPresent
+  second:
+    containers:
+      main:
         image:
-          repository: "registry.hub.docker.com/library/ubuntu"
-          tag: "23.10"
+          repository: ghcr.io/mendhak/http-https-echo
+          tag: 30
+          pullPolicy: IfNotPresent
 
 service:
   main:
     ports:
       http:
-        port: 8000
-        targetPort: 80
+        port: 8080
+  second:
+    controller: main 
+    ports:
+      http:
+        port: 8081
+  third:
+    controller: second 
+    ports:
+      http:
+        port: 8081
