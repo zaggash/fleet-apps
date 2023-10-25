@@ -21,13 +21,7 @@ env:
 image:
   tag: v1.79.1
 
-immich:
-  persistence:
-    # Main data store for all photos shared between different components.
-    library:
-      # Automatically creating the library volume is not supported by this chart
-      # You have to specify an existing PVC to use
-      existingClaim: immich-pvc
+immich.persistence.library.existingClaim: immich-pvc
 
 # Dependencies
 
