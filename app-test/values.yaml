@@ -7,8 +7,8 @@ controllers:
           tag: "1.17.4"
       second:
         image:
-          repository: "registry.hub.docker.com/library/nginx"
-          tag: "1.24.0"
+          repository: "registry.hub.docker.com/library/ubuntu"
+          tag: "23.10"
 
 service:
   main:
