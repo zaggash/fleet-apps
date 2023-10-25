@@ -1,12 +1,14 @@
 controllers:
   main:
     containers:
-      main:
+      default:
         image:
           repository: nginx
           tag: 1.17.4
 
-      second:
+  second:
+    containers:
+      default:
         image:
           repository: nginx
           tag: 1.24.0
@@ -26,3 +28,5 @@ service:
 ingress:
   main:
    enabled: false
+  second:
+    enabled: false
