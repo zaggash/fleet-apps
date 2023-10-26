@@ -1,0 +1,18 @@
+alertmanager:
+  alertmanagerSpec:
+    registry: quay.io
+    repository: prometheus/alertmanager
+    tag: v0.26.0
+
+prometheusOperator:
+  image:
+    registry: quay.io
+    repository: prometheus-operator/prometheus-operator
+    tag: v0.68.0
+
+prometheus:
+  prometheusSpec:
+    image:
+      registry: quay.io
+      repository: prometheus/prometheus
+      tag: v2.47.1
