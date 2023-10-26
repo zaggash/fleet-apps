@@ -6,7 +6,7 @@ helm:
   releaseName: app-test-hr
 
 targetCustomizations:
-  - name: mandronic-test-dwnstr-rke2
+  - name: mandronic-test-dwnstr2-rke2
     helm:
       repo:	"https://prometheus-community.github.io/helm-charts"
       version: "52.0.1"
@@ -14,4 +14,4 @@ targetCustomizations:
       - values.yaml
     clusterSelector:
       matchLabels:
-        management.cattle.io/cluster-display-name: mandronic-test-dwnstr-rke2
+        management.cattle.io/cluster-display-name: mandronic-test-dwnstr2-rke2
