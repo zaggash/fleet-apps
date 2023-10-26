@@ -1,31 +1,20 @@
-controllers:
-  main:
-    containers:
-      main:
-        image:
-          repository: ghcr.io/mendhak/http-https-echo
-          tag: 30
-          pullPolicy: IfNotPresent
-  second:
-    containers:
-      main:
-        image:
-          repository: ghcr.io/mendhak/http-https-echo
-          tag: 30
-          pullPolicy: IfNotPresent
+pacman:
+  replicaCount: 1
+  image:
+    registry: ghcr.io
+    repository: shuguet
+    image: pacman
+    tag: latest
+    pullPolicy: Always
 
+mongodb:
+  enabled: true
+
+## Service configuration.
 service:
-  main:
-    ports:
-      http:
-        port: 8080
-  second:
-    controller: main 
-    ports:
-      http:
-        port: 8081
-  third:
-    controller: second 
-    ports:
-      http:
-        port: 8081
+  type: ClusterIP
+  port: 80
+
+## Ingress configuration.
+ingress:
+  create: false
