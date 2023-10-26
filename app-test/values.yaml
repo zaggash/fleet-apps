@@ -7,10 +7,11 @@ pacman:
     tag: latest
     pullPolicy: Always
 
+auth:
+  rootPassword: "thisisapasword"
+
 mongodb:
   enabled: true
-  auth:
-    rootPassword: "thisisapasword"
 
 ## Service configuration.
 service:
