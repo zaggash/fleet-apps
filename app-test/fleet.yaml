@@ -10,8 +10,8 @@ targetCustomizations:
     helm:
       repo:	"https://prometheus-community.github.io/helm-charts"
       version: "52.0.1"
-    valuesFiles:
-      - ./values.yaml
+      valuesFiles:
+        - ./values.yaml
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: mandronic-test-dwnstr2-rke2
