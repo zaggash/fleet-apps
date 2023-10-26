@@ -1,0 +1,3 @@
+defaultNamespace: app-test-ns
+helm:
+  releaseName: app-test-hr
