@@ -1,15 +1,15 @@
 defaultNamespace: app-test-ns
 helm:
-  repo: "https://shuguet.github.io/pacman/"
-  version: "0.1.10"
-  chart: pacman
+  repo: "https://metallb.github.io/metallb"
+  version: "0.13.12"
+  chart: metallb
   releaseName: app-test-hr
 
 targetCustomizations:
   - name: mandronic-test-dwnstr-rke2
     helm:
-      repo:	"https://shuguet.github.io/pacman/"
-      version: "0.1.10"
+      repo:	"https://metallb.github.io/metallb"
+      version: "0.13.12"
     valuesFiles:
       - values.yaml
     clusterSelector:

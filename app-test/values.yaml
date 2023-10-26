@@ -1,23 +1,8 @@
-pacman:
-  replicaCount: 1
+controller:
   image:
-    registry: ghcr.io
-    repository: shuguet
-    image: pacman
-    tag: latest
-    pullPolicy: Always
-
-auth:
-  rootPassword: "thisisapasword"
-
-mongodb:
-  enabled: true
-
-## Service configuration.
-service:
-  type: ClusterIP
-  port: 80
-
-## Ingress configuration.
-ingress:
-  create: false
+    repository: quay.io/metallb/controller
+    tag: v0.13.12
+speaker:
+  image:
+    repository: quay.io/metallb/speaker
+    tag: v0.13.12
