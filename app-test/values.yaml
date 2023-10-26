@@ -9,6 +9,8 @@ pacman:
 
 mongodb:
   enabled: true
+  auth:
+    rootPassword: "thisisapasword"
 
 ## Service configuration.
 service:
